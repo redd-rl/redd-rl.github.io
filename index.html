@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/glass.css">
+    <script src="scripts/typing.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <title>redd_rl's website.</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <span class="navbar-title">redd_rl</span>
+        </div>
+    </nav>
+<div class="hero">
+    <img src="media/images/pexels-michal-osinski-1863102-3454270.jpg" alt="" class="top-background">
+    <svg class="masked-rectangle" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glass-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix type="saturate" values="1.8" in="blur" result="saturated"/>
+      <feBlend in="saturated" in2="SourceGraphic" mode="overlay"/>
+    </filter>
+    
+    <clipPath id="text-clip">
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+            font-size="102" font-weight="bold" font-family="Lexend, sans-serif" id="edit1">
+        REDD
+      </text>
+    </clipPath>
+  </defs>
+
+  <image 
+    href="media/images/pexels-michal-osinski-1863102-3454270.jpg"
+    x="0" y="0" width="100%" height="100%"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#text-clip)"
+    filter="url(#glass-blur)"
+    id="blurry-pic"
+  />
+
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-size="102" font-weight="bold" font-family="Lexend, sans-serif"
+        fill="rgba(255,255,255,0.15)"
+        stroke="rgba(255,255,255,0.4)"
+        stroke-width="0.25" id="edit2">
+    REDD
+  </text>
+</svg>
+</div>
+</body>
+</html>
