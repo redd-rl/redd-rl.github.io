@@ -64,4 +64,4 @@ async function updateText() {
 }
 
 window.addEventListener("DOMContentLoaded", updateText);
-setInterval(updateText, 10000);
+setInterval(updateText, 5000);
