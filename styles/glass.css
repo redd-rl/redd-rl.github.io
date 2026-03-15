@@ -2,7 +2,11 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Crop anything outside */
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .masked-rectangle {

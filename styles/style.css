@@ -3,6 +3,9 @@ body {
     background-color: rgb(16, 16, 16);
     overflow: hidden;
     height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .top-background {
@@ -14,6 +17,7 @@ body {
     object-fit: cover;
     overflow: hidden;
     z-index: -1;
+    pointer-events: none;
 }
 
 .navbar {
@@ -27,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 29;
     backdrop-filter: blur(26px);
     -webkit-backdrop-filter: blur(26px);
     height: 54px;
@@ -65,6 +69,7 @@ body {
     left: 0;
     top: 50%;
     transform: translate(-0.5rem, -50%);
+    z-index: 68;
 }
 
 .hamburger .bar {
@@ -74,4 +79,170 @@ body {
     background: #fff;
     border-radius: 2px;
     transition: 0.3s;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    background: linear-gradient(to bottom rgba(248,248,248,0.75), rgba(16,16,16,0.75));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border-right: 2px solid rgba(255,255,255,0.18);
+
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 20;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+    z-index: 20;
+}
+
+.menu-items {
+    list-style: none;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.menu-items li {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.side-menu.open .menu-items li {
+    animation: slideFade 0.45s forwards;
+    animation-delay: calc(var(--i) * 0.08s);
+}
+
+#edit1, #edit2 {
+    pointer-events: none;
+}
+
+.masked-rectangle,
+.masked-rectangle * {
+    pointer-events: none;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Lexend';
+    font-size: 1.3rem;
+    display: block;
+    padding: 12px 0;
+
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.menu-items:hover a {
+    opacity: 0.6;
+}
+
+.menu-items a:hover {
+    opacity: 1;
+    transform: translateX(8px);
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.info-box {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    font-family: 'Lexend';
+    text-align: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(248, 248, 248, 0.1),
+        rgba(16, 16, 16, 0.1)
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14em;
+
+    border: 1.5px solid rgba(255, 255, 255, 0.35); 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2),
+                0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.info-box h1 {
+    color: white;
+}
+
+.info-box p {
+    color: white;
+    font-size: 1.5em;
+}
+
+#metadata-bar p {
+    text-align: center;
+}
+
+#metadata-bar h1 {
+    text-align: center;
+}
+
+#metadata-bar {
+    width: 20%;
+    height: 100%;
+    border-radius: 14em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+
+}
+
+#london-logo {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+}
+
+#bread-text-bar {
+    width: 80%;
+    height: 100%;
+    border-radius: 14em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
