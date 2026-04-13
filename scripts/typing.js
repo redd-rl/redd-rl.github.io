@@ -1,8 +1,11 @@
 const items = [
-    ["RLBot", "Developer"],
-    ["RLGym", "Developer"],
     ["Hobbyist", "Producer"],
     ["REDD"],
+    ["Genius", "Transcriber"],
+    ["Musixmatch", "Curator"],
+    ["Hobbyist", "Developer"],
+    
+
 ];
 
 let lastIndex = -1;
